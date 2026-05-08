@@ -2,7 +2,7 @@
 
 # Unsupervised Neural Network for Multi-Genre Music Generation
 
-> **Course:** CSE425 / EEE474 — Neural Networks | **BRAC University, Spring 2026**
+> **Course:** CSE425 / EEE474 - Neural Networks | **BRAC University, Spring 2026**
 
 ---
 
@@ -37,10 +37,10 @@ An interesting finding of this work is that **Mean Squared Error (MSE) loss fail
 
 
 
-## 🧪 Evaluation Metrics
+## Evaluation Metrics
 
 ### Pitch Histogram Similarity (PHS)
-Maps notes to pitch classes (`pitch % 12`) and computes L1 distance between generated and reference 12-element histograms. **Lower is better.**
+**Lower is better.**
 
 ### Rhythm Diversity Score
 ```
@@ -60,7 +60,7 @@ R = #repeated_4grams / #total_4grams
 
 ## Results
 
-### Task 1 — LSTM Autoencoder
+### Task 1 - LSTM Autoencoder
 
 | Metric | Value |
 |--------|-------|
@@ -71,7 +71,7 @@ R = #repeated_4grams / #total_4grams
 | Duration per Sample | 4–13 seconds |
 | Total Parameters | 1,955,928 |
 
-### Task 2 — Variational Autoencoder
+### Task 2 - Variational Autoencoder
 
 | Metric | Value |
 |--------|-------|
@@ -82,7 +82,7 @@ R = #repeated_4grams / #total_4grams
 | Repetition Ratio | 0.000 |
 | Posterior Collapse | None  |
 
-### Task 3 — Transformer
+### Task 3 - Transformer
 
 | Metric | Value |
 |--------|-------|
@@ -93,7 +93,7 @@ R = #repeated_4grams / #total_4grams
 | Human Listening Score | 3.55 / 5.0 |
 | Generated Compositions | 10 × 512 tokens (~32s each) |
 
-### Task 4 — RLHF Fine-Tuning
+### Task 4 - RLHF Fine-Tuning
 
 | Metric | Before RL | After RL |
 |--------|-----------|----------|
