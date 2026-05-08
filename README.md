@@ -21,7 +21,7 @@
 This project follows a pipeline of **four deep unsupervised generative models** for multi-genre music generation from raw MIDI data. Music sequences are represented as binary 88-key piano rolls at `fs = 16 steps/sec`, and three core architectures are trained end-to-end:
 
 ```
-LSTM Autoencoder  →  Variational Autoencoder (VAE)  →  Transformer Decoder  →  RLHF Fine-Tuning
+LSTM Autoencoder  -  Variational Autoencoder (VAE)  - Transformer Decoder  -  RLHF Fine-Tuning
      (Task 1)               (Task 2)                       (Task 3)               (Task 4)
 ```
 
