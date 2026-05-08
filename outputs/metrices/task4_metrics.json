@@ -1,0 +1,12 @@
+{
+  "before_auto_reward": 0.5538320209973754,
+  "after_auto_reward": 0.5879757217847769,
+  "before_human": 2.5,
+  "after_human": 3.68,
+  "before_phs": 1.3670426065162904,
+  "after_phs": 1.2195954739484152,
+  "before_rd": 0.5973684210526315,
+  "after_rd": 0.2447103402691638,
+  "rl_steps": 200,
+  "rl_lr": 5e-05
+}

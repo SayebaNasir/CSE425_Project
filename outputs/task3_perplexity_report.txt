@@ -1,0 +1,11 @@
+TASK 3: TRANSFORMER PERPLEXITY EVALUATION
+==================================================
+Train Loss   : 0.7933
+Val Loss     : 0.8156
+Test Loss    : 0.8765
+Perplexity   : 2.40
+Vocab Size   : 91
+Layers       : 4
+Heads        : 4
+d_model      : 128
+Epochs       : 30
