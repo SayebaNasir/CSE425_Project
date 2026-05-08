@@ -4,11 +4,6 @@
 
 > **Course:** CSE425 / EEE474 — Neural Networks | **BRAC University, Spring 2026**
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?style=flat-square&logo=python)](https://python.org)
-[![PyTorch](https://img.shields.io/badge/PyTorch-2.x-EE4C2C?style=flat-square&logo=pytorch)](https://pytorch.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-Complete-brightgreen?style=flat-square)]()
-
 ---
 
 ## Authors
