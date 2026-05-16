@@ -143,7 +143,7 @@ Task 4: RL After      PHS: 1.016   Rhythm: 0.245   Rep: 0.052   Genre: Strong   
 | Exploratory Data Analysis | Pitch, velocity, duration, note count distributions; identified critical 94.7% sparsity finding that shaped the loss function choice for all tasks |
 | LSTM Autoencoder (Task 1) | 2-layer encoder/decoder, hidden size, latent dim ); implemented latent replication strategy across all decoder steps |
 | Loss Function Fix | Identified MSE silence failure mode; resolved with Focal Loss (γ=2.0, pos_weight=20); justified binarisation threshold for class-imbalance-suppressed note probabilities |
-| Generated 5 verified MIDI samples per window |
+| MIDI samples | Generated 5 verified MIDI samples per window |
 | Report Sections | Introduction, Datasets & Preprocessing, Task 1 Architecture & Results, Focal Loss vs MSE discussion, Task 1 contribution to Conclusion |
 
 ---
@@ -166,7 +166,7 @@ Task 4: RL After      PHS: 1.016   Rhythm: 0.245   Rep: 0.052   Genre: Strong   
 |------|---------|
 | Baseline Models | Random Generator and Markov Chain; established reference benchmarks for all subsequent comparisons |
 | Variational Autoencoder (Task 2) | Probabilistic latent space, reparameterisation trick, ELBO objective combining Focal Loss reconstruction and KL divergence |
-| KL Annealing | Linear schedule β: 0→1 over 15 warmup epochs to prevent posterior collapse; confirmed non-trivial converged KL |
+| KL Annealing | Linear schedule β: 0 to 1 over 15 warmup epochs to prevent posterior collapse; confirmed non-trivial converged KL |
 | Latent Interpolation | 8-step experiment confirming smooth latent space continuity; generated 8 genre-labelled samples with Rhythm Diversity and Repetition Ratio|
 | Report Sections | VAE Architecture & Results, all Evaluation Metrics definitions (PHS, Rhythm Diversity, Repetition Ratio), KL Annealing discussion, System Architectural Trade-offs, Evaluation Metric Interpretation, Limitations, Directions toward Autoregressive Generation, Task 2 contribution to Conclusion |
 
