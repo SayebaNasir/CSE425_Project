@@ -189,5 +189,5 @@ CSE425_Project/                          (main branch)
 ---
 
 <div align="center">
-  <sub>Built by Afra Musarrat Diya · Sayeba Nasir · Farjana Sikder Tisha — BRAC University, Spring 2026</sub>
+  <sub> by Afra Musarrat Diya · Sayeba Nasir · Farjana Sikder Tisha . BRAC University, Spring 2026</sub>
 </div>
