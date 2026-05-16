@@ -44,7 +44,7 @@ Raw MIDI files are processed in a 5-step pipeline:
 |------|-------------|
 | 1. Piano Roll Extraction | `pretty_midi` at `fs = 16`, shape `(88, T)` |
 | 2. Binarisation | All non-zero velocities mapped to 1.0 |
-| 3. Windowing | Non-overlapping 128-step windows → shape `(88, 128)` per segment |
+| 3. Windowing | Non-overlapping 128-step windows, shape `(88, 128)` per segment |
 | 4. Sparsity Filtering  |
 | 5. Split Assignment  |
 
@@ -56,7 +56,6 @@ Raw MIDI files are processed in a 5-step pipeline:
 |--------|---------|-----------|
 | Pitch Histogram Similarity (PHS) | `H(p,q) = Σ \|p_i - q_i\|` over 12 pitch classes | Lower is better |
 | Rhythm Diversity Score | `D_rhythm = #unique_durations / #total_notes` | Higher is better |
-| Repetition Ratio | `R = #repeated_4-grams / #total_4-grams` | 0.1 to 0.5 is coherent |
 | Human Listening Score | 1–5 Likert scale averaged over 10 participants (melodic coherence, rhythmic quality, overall musicality) | Higher is better |
 
 ---
@@ -70,8 +69,8 @@ Raw MIDI files are processed in a 5-step pipeline:
 | Final Training Loss (Focal) | 0.3038 |
 | Final Validation Loss | 0.3970 |
 | Final Test Loss | 0.4049 |
-| Notes per Generated Sample | 50–106 |
-| Duration per Sample | 4–13 seconds |
+| Notes per Generated Sample | 50-106 |
+| Duration per Sample | 4-13 seconds |
 | Total Parameters | 1,955,928 |
 
 > The abstract and conclusion cite a training loss of 0.2746 (an earlier checkpoint value); the authoritative result from Table IV in the report is **0.3038**.
@@ -124,15 +123,13 @@ Raw MIDI files are processed in a 5-step pipeline:
 
 ## Cross-Model Comparison
 
-| Model | Loss | Perplexity | PHS | Rhythm Div. | Rep. Ratio | Genre | HLS |
-|-------|------|-----------|-----|-------------|------------|-------|-----|
-| Random Generator | - | 91.0 | 0.372 | 0.067 | 0.000 | None | 1.10 |
-| Markov Chain | - | 2.06 | 1.393 | 0.067 | 0.067 | Weak | 2.30 |
-| Task 1: LSTM AE | 0.2746 | - | 0.276 | 0.320 | 0.000 | Single | 3.38 |
-| Task 2: VAE | 0.6705 | - | 0.700 | 0.036 | 0.009 | Multi | 3.46 |
-| Task 3: Transformer | 0.8765 | 2.40 | 1.229 | 0.737 | 0.026 | Strong | 3.55 |
-| Task 4: RL Before | - | - | 1.398 | 0.597 | 0.040 | Strong | 2.50 |
-| Task 4: RL After | - | - | 1.016 | 0.245 | 0.052 | Strong | 3.68 |
+Random Generator      PPL: 91.0   PHS: 0.372   Rhythm: 0.067   Rep: 0.000   Genre: None     HLS: 1.10
+Markov Chain          PPL: 2.06   PHS: 1.393   Rhythm: 0.067   Rep: 0.067   Genre: Weak     HLS: 2.30
+Task 1: LSTM AE       Loss: 0.2746   PHS: 0.276   Rhythm: 0.320   Rep: 0.000   Genre: Single   HLS: 3.38
+Task 2: VAE           Loss: 0.6705   PHS: 0.700   Rhythm: 0.036   Rep: 0.009   Genre: Multi    HLS: 3.46
+Task 3: Transformer   Loss: 0.8765   PPL: 2.40   PHS: 1.229   Rhythm: 0.737   Rep: 0.026   Genre: Strong   HLS: 3.55
+Task 4: RL Before     PHS: 1.398   Rhythm: 0.597   Rep: 0.040   Genre: Strong   HLS: 2.50
+Task 4: RL After      PHS: 1.016   Rhythm: 0.245   Rep: 0.052   Genre: Strong   HLS: 3.68
 
 ---
 
