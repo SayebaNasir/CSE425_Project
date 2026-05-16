@@ -6,8 +6,6 @@
 
 ## Authors
 
-| Name | ID | Department | University |
-
 | Afra Musarrat Diya | 22201157 | CSE | BRAC University, Dhaka |
 | Sayeba Nasir | 22201354 | CSE | BRAC University, Dhaka |
 | Farjana Sikder Tisha | 22201352 | CSE | BRAC University, Dhaka |
@@ -66,7 +64,7 @@ All notes mapped to pitch class , producing a normalised histogram.
 
 ## Results
 
-### Task 1 — LSTM Autoencoder
+### Task 1 : LSTM Autoencoder
 
 | Metric | Value |
 
@@ -79,7 +77,7 @@ All notes mapped to pitch class , producing a normalised histogram.
 
 > **Note:** The abstract and conclusion cite a training loss of 0.2746 (an earlier checkpoint value); the authoritative result from Table IV in the report is **0.3038**.
 
-### Task 2 — Variational Autoencoder
+### Task 2 : Variational Autoencoder
 
 | Metric | Value |
 
@@ -91,7 +89,7 @@ All notes mapped to pitch class , producing a normalised histogram.
 | Repetition Ratio | 0.000 |
 | Posterior Collapse | None |
 
-### Task 3 — Transformer Decoder
+### Task 3 : Transformer Decoder
 
 | Metric | Value |
 
@@ -108,7 +106,7 @@ All notes mapped to pitch class , producing a normalised histogram.
 | Generated Compositions | 10 × 512 tokens (~32s each) |
 | Genre Conditioning | 8 genres |
 
-### Task 4 — RLHF Fine-Tuning
+### Task 4 : RLHF Fine-Tuning
 
 | Metric | Before RL | After RL |
 
@@ -135,7 +133,7 @@ All notes mapped to pitch class , producing a normalised histogram.
 
 ## Individual Contributions
 
-### Afra Musarrat Diya — 22201157
+### Afra Musarrat Diya ( 22201157 )
 - Built the full **preprocessing pipeline**: MIDI-to-piano-roll conversion, binarisation, 128-step windowing, sparsity filtering, and dataset splitting for both MAESTRO and Lakh MIDI
 - Conducted **Exploratory Data Analysis** (pitch, velocity, duration, note count distributions) and identified the critical 94.7% sparsity finding that shaped the loss function choice for all tasks
 - Designed and trained the **LSTM Autoencoder (Task 1)**: 2-layer encoder/decoder, hidden size, latent dim; implemented the latent replication strategy across all decoder steps
@@ -145,7 +143,7 @@ All notes mapped to pitch class , producing a normalised histogram.
 
 ---
 
-### Sayeba Nasir — 22201354
+### Sayeba Nasir ( 22201354 )
 - Designed, Trained the **Transformer Decoder (Task 3)**: tokenisation scheme, sinusoidal positional encoding, learnable genre embeddings for 8 genres, causal masking; testing perplexity
 - Implemented sampling; generated 10 long-form compositions across all 8 genres
 - Implemented **RLHF Fine-Tuning (Task 4)** via REINFORCE (200 steps, lr=5×10⁻⁵): designed composite reward function note density + duration adequacy + pitch diversity; found improved valid MIDI output from and Human Listening Score
@@ -154,7 +152,7 @@ All notes mapped to pitch class , producing a normalised histogram.
 
 ---
 
-### Farjana Sikder Tisha — 22201352
+### Farjana Sikder Tisha  ( 22201352 )
 - Implemented both **Baseline Models**: Random Generator and Markov Chain, establishing reference benchmarks for all subsequent comparisons
 - Designed and trained the **Variational Autoencoder (Task 2)**: probabilistic latent space (dim 128) with reparameterisation trick and ELBO objective combining Focal Loss reconstruction and KL divergence
 - Designed the **KL annealing schedule** confirmed non-trivial converged KL 
